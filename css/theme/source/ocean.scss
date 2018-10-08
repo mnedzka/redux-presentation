@@ -1,0 +1,85 @@
+@import '../template/mixins';
+@import '../template/settings';
+
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+$mainFont: 'Open Sans', sans-serif;
+$mainColor: #333;
+$headingFont: 'Quicksand', sans-serif;
+$headingColor: #333;
+$headingLetterSpacing: -0.08em;
+$headingTextShadow: none;
+$linkColor: #67c2e1;
+$linkColorHover: darken($linkColor, 20%);
+$selectionBackgroundColor: #134674;
+
+$white: #fee;
+
+@mixin bodyBackground() {
+	@include radial-gradient(#add9e4, #f7fbfc);
+}
+
+.reveal {
+	a {
+		line-height: 1.3em;
+	}
+
+	table tr td {
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.alt {
+		color: $white;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: $white;
+			text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+		}
+
+		.screenshot {
+			border-color: $white;
+		}
+	}
+
+	.clean-img {
+		border: none;
+		box-shadow: none;
+		background: none;
+	}
+
+	.icon {
+		width: 300px;
+	}
+
+	.person-icon {
+		width: 111px;
+		border-radius: 128px;
+	}
+
+	.screenshot {
+		display: block;
+		margin: 0 auto;
+		width: 75%;
+	}
+
+	.split {
+		width: 50%;
+	}
+
+	.left {
+		float: left;
+	}
+
+	.right {
+		float: right;
+	}
+}
+
+@import "../template/theme";

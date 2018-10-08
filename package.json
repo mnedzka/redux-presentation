@@ -1,0 +1,43 @@
+{
+  "name": "ocean-team-presentations",
+  "version": "1.0.0",
+  "description": "ocean-team-presentations",
+  "main": "js/reveal.js",
+  "scripts": {
+    "test": "grunt test",
+    "start": "npm run local:clean && npm run local:generate && grunt serve",
+    "build": "npm run static:clean && npm run static:generate && grunt",
+    "local:clean": "rimraf ./presentations/generated",
+    "local:generate": "node generateSlides.js --localhost",
+    "static:clean": "rimraf ./static",
+    "static:generate": "node generateSlides.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://stash.stepstone.com/projects/APPLY/repos/ocean-team-presentations"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.2",
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-qunit": "^2.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-retire": "^1.0.7",
+    "grunt-sass": "^2.0.0",
+    "grunt-zip": "~0.17.1",
+    "mustache": "^2.3.0",
+    "rimraf": "^2.6.2",
+    "socket.io": "^1.7.3"
+  },
+  "license": "MIT"
+}
