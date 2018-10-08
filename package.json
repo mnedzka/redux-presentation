@@ -2,7 +2,6 @@
   "name": "ocean-team-presentations",
   "version": "1.0.0",
   "description": "ocean-team-presentations",
-  "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
     "start": "npm run local:clean && npm run local:generate && grunt serve",
