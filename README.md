@@ -1,5 +1,5 @@
 # Ocean Team Presentations
-This project helps creating slides. It's built on top of [reveal.js library](https://github.com/hakimel/reveal.js);
+This project helps creating slides. It's built on top of [reveal.js library](https://github.com/hakimel/reveal.js).
 
 ## Usage
 ### Running presentation locally
