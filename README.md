@@ -15,7 +15,7 @@ This project helps creating slides. It's built on top of [reveal.js library](htt
 1. In order to share your presentation with other, you can now share entire `public` directory.
 
 ### Creating new slides
-1. Create new record in `app.config.js` file, in `presentations` section. It should include `file` property, describing name of file with your slides, and `title` property, describing title of your presentation. Optionally, it can include `theme` property, containing name of file located in `css/theme` directory, and `template` property, containing name of file located in `templates` directory.
+1. Create new record in `app.config.js` file, in `presentations` section. It should include `file` property, describing name of file with your slides, and `title` property, describing title of your presentation. Optionally, it can include `theme` property, containing name of file located in `css/theme` directory (if not provided, default theme will be used, which is located at `css/theme/simple.css`), and `template` property, containing name of file located in `templates` directory (if not provided, default template will be used, which is located at `templates/template.ejs`).
 1. Create new HTML file in `presentations` directory, with name corresponding to one you've put in `app.config.js`.
 1. Put your slides in new file, each slide represented by `<section>` element. You may configure each slide in a custom way, ad described in [documentation](https://github.com/hakimel/reveal.js#instructions).
 1. Put all your assets in `assets` directory and link them with `assets` prefix in your slides (_no_ trailing slash). 
