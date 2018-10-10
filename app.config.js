@@ -1,8 +1,13 @@
 module.exports = {
     presentations: [
         {
+            file: 'index.html',
+            title: 'Ocean Team Presentations',
+            template: 'index',
+        },
+        {
             file: 'example.html',
-            title: 'example',
+            title: 'Ocean Team Presentations - Example',
             theme: 'ocean',
         },
     ],

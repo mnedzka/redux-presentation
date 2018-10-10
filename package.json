@@ -4,12 +4,10 @@
   "description": "ocean-team-presentations",
   "scripts": {
     "test": "grunt test",
-    "start": "npm run local:clean && npm run local:generate && grunt serve",
-    "build": "npm run static:clean && npm run static:generate && grunt",
-    "local:clean": "rimraf ./presentations/generated",
-    "local:generate": "node generateSlides.js --localhost",
-    "static:clean": "rimraf ./static",
-    "static:generate": "node generateSlides.js"
+    "start": "npm run build && grunt serve",
+    "build": "npm run bundle:clean && npm run bundle:generate",
+    "bundle:clean": "rimraf ./public",
+    "bundle:generate": "node generatePresentationsBundle.js"
   },
   "repository": {
     "type": "git",

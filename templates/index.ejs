@@ -21,6 +21,14 @@
 <body>
 <div class="reveal">
     <div class="slides">
+        <section>
+            <h3>Generated presentations:</h3>
+            <ul>
+                <% for (index in config.presentations) { %>
+                    <li><a href="<%= config.presentations[index].file %>"><%= config.presentations[index].title %></a></li>
+                <% } %>
+            </ul>
+        </section>
         <%- slides %>
     </div>
 </div>
@@ -31,7 +39,7 @@
 
 <script>
     Reveal.initialize(
-        <%- revealConfig %>
+        <%- JSON.stringify(config.reveal) %>
     );
 </script>
 </body>

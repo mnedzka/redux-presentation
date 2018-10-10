@@ -11,5 +11,4 @@ node_modules/
 .sass-cache
 css/reveal.min.css
 js/reveal.min.js
-presentations/generated/
-static/
+public/
