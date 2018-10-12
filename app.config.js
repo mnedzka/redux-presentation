@@ -10,6 +10,11 @@ module.exports = {
             title: 'Ocean Team Presentations - Example',
             theme: 'ocean',
         },
+        {
+            file: 'sprint58.html',
+            title: 'Ocean Team Presentations - Sprint 58',
+            theme: 'ocean',
+        },
     ],
     reveal: {
         dependencies: [
