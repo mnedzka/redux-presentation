@@ -45,8 +45,6 @@ function generatePresentations() {
         fs.mkdirSync(buildDirectoryPath);
     }
 
-    let presentationsCreated = [];
-
     config.presentations.forEach(presentationConfig => {
         const presentationFilePath = path.join(__dirname, PRESENTATIONS_DIR_NAME, presentationConfig.file);
 
@@ -56,10 +54,7 @@ function generatePresentations() {
             }
             
             const presentationContent = generatePresentationContent(presentationConfig);
-            
             fs.writeFileSync(path.join(buildDirectoryPath, presentationConfig.file), presentationContent);
-
-            presentationsCreated.push(presentationConfig);
             
             if (VERBOSE) {
                 console.log('Done');

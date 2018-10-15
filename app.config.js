@@ -12,7 +12,7 @@ module.exports = {
         },
         {
             file: 'sprint58.html',
-            title: 'Ocean Team Presentations - Sprint 58',
+            title: 'Ocean Team Presentations - Sprint 58 review',
             theme: 'ocean',
         },
     ],
