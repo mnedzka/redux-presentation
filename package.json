@@ -5,7 +5,7 @@
   "scripts": {
     "test": "grunt test",
     "start": "npm run build && grunt serve",
-    "build": "npm run bundle:clean && npm run bundle:generate",
+    "build": "npm run bundle:clean && npm run bundle:generate && grunt css",
     "bundle:clean": "rimraf ./public",
     "bundle:generate": "node generatePresentationsBundle.js"
   },
