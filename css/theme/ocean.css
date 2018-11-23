@@ -7,6 +7,10 @@
   text-align: center;
   vertical-align: middle; }
 
+.reveal .highlighted {
+  color: #fee;
+  background-color: #0C2577; }
+
 .reveal .alt {
   color: #fee; }
   .reveal .alt h1,
