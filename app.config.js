@@ -11,19 +11,19 @@ module.exports = {
             theme: 'ocean',
         },
         {
-            file: 'sprint58.html',
-            title: 'Ocean Team Presentations - Sprint 58 review',
+            file: 'ocean-team-sprint58.html',
+            title: 'Ocean Team - Sprint 58 review',
             theme: 'ocean',
         },
         {
-            file: 'sprint58-2.html',
-            title: 'Ocean Team Presentations - Sprint 58 v2 review',
+            file: 'ocean-team-sprint59.html',
+            title: 'Ocean Team - Sprint 59 review',
             theme: 'ocean',
         },
         {
-            file: 'sprint59.html',
-            title: 'Ocean Team Presentations - Sprint 59 review',
-            theme: 'ocean',
+          file: 'ocean-team-sprint60.html',
+          title: 'Ocean Team - Sprint 60 review',
+          theme: 'ocean',
         },
     ],
     reveal: {
