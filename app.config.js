@@ -35,6 +35,11 @@ module.exports = {
             title: 'Ocean Team - Sprint 62 review',
             theme: 'ocean',
         },
+        {
+            file: 'ocean-team-sprint63.html',
+            title: 'Ocean Team - Sprint 63 review',
+            theme: 'ocean',
+        },
     ],
     reveal: {
         dependencies: [
