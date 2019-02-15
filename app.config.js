@@ -11,26 +11,6 @@ module.exports = {
             theme: 'ocean',
         },
         {
-            file: 'ocean-team-sprint58.html',
-            title: 'Ocean Team - Sprint 58 review',
-            theme: 'ocean',
-        },
-        {
-            file: 'ocean-team-sprint59.html',
-            title: 'Ocean Team - Sprint 59 review',
-            theme: 'ocean',
-        },
-        {
-            file: 'ocean-team-sprint60.html',
-            title: 'Ocean Team - Sprint 60 review',
-            theme: 'ocean',
-        },
-        {
-            file: 'ocean-team-sprint61.html',
-            title: 'Ocean Team - Sprint 61 review',
-            theme: 'ocean',
-        },
-        {
             file: 'ocean-team-sprint62.html',
             title: 'Ocean Team - Sprint 62 review',
             theme: 'ocean',
@@ -43,6 +23,11 @@ module.exports = {
         {
             file: 'ocean-team-sprint64.html',
             title: 'Ocean Team - Sprint 64 review',
+            theme: 'ocean',
+        },
+        {
+            file: 'ocean-team-sprint65.html',
+            title: 'Ocean Team - Sprint 65 review',
             theme: 'ocean',
         },
     ],
