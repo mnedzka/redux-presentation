@@ -1,8 +1,8 @@
 @import '../template/mixins';
 @import '../template/settings';
 
-@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400, 700, 400italic, 700italic');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400italic, 700italic, 400, 700');
 
 $mainFont: 'Open Sans', sans-serif;
 $mainColor: #333;
@@ -15,78 +15,82 @@ $linkColorHover: darken($linkColor, 20%);
 $selectionBackgroundColor: #134674;
 
 $white: #fee;
-$blue: #0C2577;
+$blue: #0c2577;
 
 @mixin bodyBackground() {
-	@include radial-gradient(#add9e4, #f7fbfc);
+  @include radial-gradient(#00c9ff, #92fe9d);
 }
 
 .reveal {
+  a {
+    line-height: 1.3em;
+  }
 
-	a {
-		line-height: 1.3em;
-	}
+  table tr td {
+    text-align: center;
+    vertical-align: middle;
+  }
 
-	table tr td {
-		text-align: center;
-		vertical-align: middle;
-	}
+  .highlighted {
+    color: $white;
+    background-color: $blue;
+  }
 
-	.highlighted {
-		color: $white;
-		background-color: $blue;
-	}
+  .alt {
+    color: $white;
 
-	.alt {
-		color: $white;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $white;
+      text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+    }
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: $white;
-			text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
-		}
+    .screenshot {
+      border-color: $white;
+    }
+  }
 
-		.screenshot {
-			border-color: $white;
-		}
-	}
+  .clean-img {
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
 
-	.clean-img {
-		border: none;
-		box-shadow: none;
-		background: none;
-	}
+  .icon {
+    width: 300px;
+  }
 
-	.icon {
-		width: 300px;
-	}
+  .full-width {
+    height: auto;
+    width: 100%;
+  }
 
-	.person-icon {
-		width: 111px;
-		border-radius: 128px;
-	}
+  .person-icon {
+    width: 111px;
+    border-radius: 128px;
+  }
 
-	.screenshot {
-		display: block;
-		margin: 0 auto;
-		width: 75%;
-	}
+  .screenshot {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+  }
 
-	.split {
-		width: 50%;
-	}
+  .split {
+    width: 50%;
+  }
 
-	.left {
-		float: left;
-	}
+  .left {
+    float: left;
+  }
 
-	.right {
-		float: right;
-	}
+  .right {
+    float: right;
+  }
 }
 
-@import "../template/theme";
+@import '../template/theme';
