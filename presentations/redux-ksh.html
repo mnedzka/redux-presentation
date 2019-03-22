@@ -1,39 +1,138 @@
 <section>
-  <img src="assets/ocean-team/logo-transparent.png" class="clean-img icon" />
-  <h1>Redux Introduction</h1>
-  <h2>Sprint review</h2>
-  <h4><strong>#67</strong></h4>
+  <img src="assets/redux/redux-logo.png" class="clean-img full-width" />
+  <h3>Redux Introduction</h3>
   <small>(27.03.2019)</small>
 </section>
 <section>
-  <h2>Sprint goal</h2>
-  <h3 class="highlighted fragment fade-in"></h3>
+  <img src="assets/redux/carbon.svg" class="clean-img full-width" />
 </section>
 <section>
-  <h2>🙋 So, why this goal?</h2>
-  <p class="fragment fade-in"></p>
+  <h2>MVC</h2>
   <p class="fragment fade-in">
-    👉
+    A year after releasing React, Facebook announced the "Flux Architecture": "We found that two-way
+    data bindings led to cascading updates, where changing one object led to another object
+    changing, which could also trigger more updates. As applications grew, these cascading updates
+    made it very difficult to predict what would change as the result of one user interaction. When
+    updates can only change data within a single round, the system as a whole becomes more
+    predictable." "Flux is more of a pattern than a framework"
   </p>
 </section>
 <section>
+  <h2>What Is Redux?</h2>
+  <p class="fragment fade-in">
+    Redux attempts to make state mutations predictable by imposing certain restrictions on how and
+    when updates can happen. These restrictions are reflected in the three principles of Redux:
+  </p>
+  <p class="fragment fade-in">
+    Single source of truth: The state of your whole application is stored as a tree of plain objects
+    and arrays within a single store. (How much you put in the store is up to you - not all data
+    needs to live there.) State is read-only: State updates are caused by dispatching an action,
+    which is a plain object describing what happened. The rest of the app is not allowed to modify
+    the state tree directly. Changes are made with pure functions: All state updates are performed
+    by pure functions called reducers, which are (state, action) => newState
+  </p>
+</section>
+<section>
+  <h2>Centralized</h2>
+  <p class="fragment fade-in">
+    Having a single store and single state tree enables many powerful techniques: logging of all
+    updates, API handling, undo/redo, state persistence, "time-travel debugging", error reports with
+    full snapshots of app state, and more.
+  </p>
+</section>
+<section>
+  <h2>Vanilla Redux</h2>
+  <p class="fragment fade-in"></p>
+</section>
+
+<section>
+  <h2>Goals</h2>
+  <p class="fragment fade-in">Define what redux is</p>
+  <p class="fragment fade-in">Describe actions and reducers in redux</p>
+  <p class="fragment fade-in">Describe methods on the redux store</p>
+</section>
+<section>
+  <h2>Redux</h2>
+  <p class="fragment fade-in">A popular state management library</p>
+  <p class="fragment fade-in">Created by Dan Abramov and Andrew Clark</p>
+  <p class="fragment fade-in">Inspired by Facebook Flux and Elm</p>
+  <p class="fragment fade-in">Models the application state as a single JavaScript Object</p>
+  <p class="fragment fade-in">Often used with React but it does not depend on React</p>
+</section>
+<section>
+  <h2>Action</h2>
+  <p class="fragment fade-in">
+    A plain JavaScript object that must have a key called type and a string value
+  </p>
+  <p class="fragment fade-in">{ type: "LOGOUT_USER" }</p>
+  <p class="fragment fade-in">The action can have any number of additional keys</p>
+</section>
+<section>
+  <h2>Creating A Store</h2>
+  <p class="fragment fade-in">
+    A plain JavaScript object that must have a key called type and a string value
+  </p>
+  <p class="fragment fade-in">{ type: "LOGOUT_USER" }</p>
+  <p class="fragment fade-in">The action can have any number of additional keys</p>
+</section>
+<section>
+  <h2>Reducer</h2>
+  <p class="fragment fade-in">
+    A function that accepts the state and an action and returns a new state (entire state object)
+  </p>
+  <p class="fragment fade-in">
+    function rootReducer(state={}, action) { switch(action.type) { case "LOGOUT_USER": return
+    {...state, login: false} case "LOGIN_USER": return {...state, login: true} default: return
+    state; } }
+  </p>
+</section>
+<section>
+  <h2>Using Redux with React</h2>
+  <p class="fragment fade-in">
+    mapStateToProps: called every time the store state changes. It receives the entire store state,
+    and should return an object full of data. Each field in the returned object becomes a prop for
+    the wrapped component.
+  </p>
+  <p class="fragment fade-in">
+    mapDispatchToProps: called once on component creation. It receives the dispatch method, and
+    should return an object full of functions that use dispatch.
+  </p>
+</section>
+<section>
+  <h2>Redux Middleware</h2>
+  <p class="fragment fade-in">
+    A Redux store can be configured to use middleware. Middleware provides the capability to run
+    code after an action is dispatched, but before it reaches the reducer
+  </p>
+  <p class="fragment fade-in">
+    Middlewares form a pipeline that wraps around the dispatch function. Each middleware in the
+    chain can pass actions onward, restart the dispatch pipeline, and access the store state.
+  </p>
+</section>
+<section>
+  <img src="assets/redux/with-and-without-redux.png" class="clean-img full-width" />
+</section>
+<section>
   <h2>Pretty Code</h2>
-  <pre><code class="javascript" data-trim data-line-numbers="4,8-9">
-import React, { useState } from 'react';
+  <div>
+    <pre><code class="hljs javascript" data-trim data-line-numbers="4,8-9">
+        import React, { useState } from 'react';
+        
+        function Example() {
+        const [count, setCount] = useState(0);
+        
+            return (
+                &lt;div&gt;
+                    &lt;p&gt;You clicked {count} times&lt;/p&gt;
+                    &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+                    Click me
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            );
+        }
+            </code></pre>
+  </div>
 
-function Example() {
-const [count, setCount] = useState(0);
-
-    return (
-        &lt;div&gt;
-            &lt;p&gt;You clicked {count} times&lt;/p&gt;
-            &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
-            Click me
-            &lt;/button&gt;
-        &lt;/div&gt;
-    );
-}
-    </code></pre>
   <p>
     Code syntax highlighting courtesy of
     <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.

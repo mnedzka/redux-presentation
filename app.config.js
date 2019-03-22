@@ -8,7 +8,7 @@ module.exports = {
     {
       file: 'redux-ksh.html',
       title: 'Redux Introduction',
-      theme: 'sky',
+      theme: 'ocean',
     },
   ],
   reveal: {
