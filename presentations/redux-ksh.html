@@ -87,6 +87,29 @@
   </p>
 </section>
 <section>
+  <h2>Using Redux with React</h2>
+  <p class="fragment fade-in">
+    mapStateToProps: called every time the store state changes. It receives the entire store state,
+    and should return an object full of data. Each field in the returned object becomes a prop for
+    the wrapped component.
+  </p>
+  <p class="fragment fade-in">
+    mapDispatchToProps: called once on component creation. It receives the dispatch method, and
+    should return an object full of functions that use dispatch.
+  </p>
+</section>
+<section>
+  <h2>Redux Middleware</h2>
+  <p class="fragment fade-in">
+    A Redux store can be configured to use middleware. Middleware provides the capability to run
+    code after an action is dispatched, but before it reaches the reducer
+  </p>
+  <p class="fragment fade-in">
+    Middlewares form a pipeline that wraps around the dispatch function. Each middleware in the
+    chain can pass actions onward, restart the dispatch pipeline, and access the store state.
+  </p>
+</section>
+<section>
   <img src="assets/redux/with-and-without-redux.png" class="clean-img full-width" />
 </section>
 <section>
