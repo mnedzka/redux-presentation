@@ -3,11 +3,41 @@
   <h3>Redux Introduction</h3>
   <small>(27.03.2019)</small>
 </section>
-<section>
-  <img src="assets/redux/carbon.svg" class="clean-img full-width" />
-</section>
+
 <section>
   <h2>MVC</h2>
+
+  <p class="fragment fade-in">
+    Facebook faces the problem while developing chat system, view1 manipulates model1 and model1
+    updates the view2 like their system has circular dependency thats why they came up with solution
+    flux.
+  </p>
+  <img src="assets/redux/dan_abramov.jpg" class="clean-img full-width" />
+</section>
+
+<section>
+  <!-- <h2>DX</h2>
+  <p class="fragment fade-in">
+    Developr experience
+  </p>
+  <img src="assets/redux/dan_abramov.jpg" class="clean-img full-width" /> -->
+  <section>
+    <p class="fragment fade-in">
+      Developr experience
+    </p>
+    <img src="assets/redux/dan_abramov.jpg" class="clean-img full-width" />
+  </section>
+  <section>
+    <h2>DX</h2>
+    <p class="fragment fade-in">
+      Developr experience
+    </p>
+    <img src="assets/redux/dan_abramov.jpg" class="clean-img full-width" />
+  </section>
+</section>
+
+<section>
+  <h2>FLUX</h2>
   <p class="fragment fade-in">
     A year after releasing React, Facebook announced the "Flux Architecture": "We found that two-way
     data bindings led to cascading updates, where changing one object led to another object
@@ -15,6 +45,11 @@
     made it very difficult to predict what would change as the result of one user interaction. When
     updates can only change data within a single round, the system as a whole becomes more
     predictable." "Flux is more of a pattern than a framework"
+  </p>
+  <p class="fragment fade-in">
+    Facebook faces the problem while developing chat system, view1 manipulates model1 and model1
+    updates the view2 like their system has circular dependency thats why they came up with solution
+    flux.
   </p>
 </section>
 <section>
@@ -40,11 +75,21 @@
     full snapshots of app state, and more.
   </p>
 </section>
+
+<section>
+  <img src="assets/redux/dan_abramov.jpg" class="clean-img full-width" />
+</section>
+<section>
+  <img src="assets/redux/ReactDataFlow.gif" class="clean-img full-width" />
+</section>
+<section>
+  <img src="assets/redux/doing-what-dan-said.jpg" class="clean-img full-width" />
+</section>
+
 <section>
   <h2>Vanilla Redux</h2>
   <p class="fragment fade-in"></p>
 </section>
-
 <section>
   <h2>Goals</h2>
   <p class="fragment fade-in">Define what redux is</p>
@@ -97,6 +142,14 @@
     mapDispatchToProps: called once on component creation. It receives the dispatch method, and
     should return an object full of functions that use dispatch.
   </p>
+</section>
+
+<section>
+  <img
+    src="assets/redux/carbon.svg"
+    style="min-height: 1000px; min-width: 1600px;"
+    class="clean-img full-width"
+  />
 </section>
 <section>
   <h2>Redux Middleware</h2>
