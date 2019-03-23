@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400, 700, 400italic, 700italic");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic, 700italic, 400, 700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i");
 .reveal a {
   line-height: 1.3em; }
 
@@ -10,6 +11,11 @@
 .reveal .highlighted {
   color: #fee;
   background-color: #0c2577; }
+
+.reveal h2 {
+  font-weight: bold;
+  display: inline-block;
+  border-bottom: 5px solid black; }
 
 .reveal .alt {
   color: #fee; }
@@ -68,7 +74,7 @@ body {
   background-color: #2b2b2b; }
 
 .reveal {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
   font-weight: normal;
   color: #333; }
@@ -99,10 +105,10 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #333;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   line-height: 1.2;
-  letter-spacing: -0.08em;
+  letter-spacing: normal;
   text-transform: uppercase;
   text-shadow: none;
   word-wrap: break-word; }

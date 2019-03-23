@@ -3,12 +3,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400, 700, 400italic, 700italic');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400italic, 700italic, 400, 700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i');
 
-$mainFont: 'Open Sans', sans-serif;
+$mainFont: 'Roboto', sans-serif;
 $mainColor: #333;
-$headingFont: 'Quicksand', sans-serif;
+$headingFont: 'Roboto', sans-serif;
 $headingColor: #333;
-$headingLetterSpacing: -0.08em;
+// $headingLetterSpacing: -0.08em;
 $headingTextShadow: none;
 $linkColor: #67c2e1;
 $linkColorHover: darken($linkColor, 20%);
@@ -34,6 +35,12 @@ $blue: #0c2577;
   .highlighted {
     color: $white;
     background-color: $blue;
+  }
+
+  h2 {
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 5px solid black;
   }
 
   .alt {
