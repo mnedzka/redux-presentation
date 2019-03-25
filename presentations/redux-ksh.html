@@ -5,65 +5,85 @@
 </section>
 
 <section>
-  <h2>The state problem in Javascript</h2>
-</section>
-
-<section>
+  <section>
+    <h2>The state challenge in Javascript</h2>
+  </section>
   <section>
     <h2>MVC</h2>
     <p class="fragment fade-in">
-      Invented in 70's. Used in ROR or Django or Bacbone in frotend side. Play well in small client
-      applications but has problems when app grows because of two way data binding which cause hard
-      to track changes in application state.
+      Invented in 70's. Used in backend in Java, PHP, ASP.NET, C#, ROR, Django. On frontend side in
+      Backbone or AngularJS
+      <img src="assets/redux/mvc-diagram.png" class="fragment fade-in clean-img full-width" />
+    </p>
+  </section>
+  <section>
+    <h2>What's the problem?</h2>
+    <p class="fragment fade-in">
+      Play well in small client applications but has problems when app grows because of two way data
+      binding which cause hard to track changes in application state.
     </p>
     <p class="fragment fade-in">
+      The problem is in two way data binding MVC is that they have many to many dependency between
+      models and views.
+    </p>
+    <p class="fragment fade-in">
+      A model can update a view which can update a model which can update another model and there
+      can be a infinite loop of cascading updates.
+    </p>
+  </section>
+  <section>
+    <p>
       Facebook faces the problem while developing chat system, view1 manipulates model1 and model1
       updates the view2 like their system has circular dependency thats why they came up with
       solution flux.
     </p>
-    <img src="assets/redux/mvc.png" class="clean-img full-width" />
   </section>
   <section>
-    <img src="assets/redux/action.svg" class="clean-img full-width" />
-  </section>
-  <section>
-    <img src="assets/redux/action2.svg" class="clean-img full-width" />
-  </section>
-</section>
-
-<section>
-  <section>
-    <p class="fragment fade-in">
-      Developr experience (DX)
+    <p class="citation">
+      In a talk Jing Chen ( Creator of Flux ) said - "There is just an explosion of command flows,
+      and it is hard to tell if there is any infinite loop that might be causing a cascading
+      effect."
     </p>
   </section>
   <section>
-    <img src="assets/redux/passByValue-vs-passByReference.gif" class="clean-img full-width" />
+    <h2>Unidirectional data flow</h2>
+    <p class="fragment fade-in">
+      In unidirectional data flow action updates stores which updates views. So if there is a error
+      it would be easy to track which action caused it. Unidirectional data flow is more
+      predictable.
+    </p>
   </section>
   <section>
-    <h2>DX</h2>
-    <p class="fragment fade-in">
-      Developer experience
-    </p>
-    <img src="assets/redux/dan_abramov.jpg" class="clean-img full-width" />
+    <img src="assets/redux/mvc-problem.jpg" class="fragment fade-in clean-img full-width" />
   </section>
 </section>
 
 <section>
   <h2>FLUX</h2>
+  <img src="assets/redux/flux.png" class=" clean-img full-width" />
   <p class="fragment fade-in">
-    A year after releasing React, Facebook announced the "Flux Architecture": "We found that two-way
-    data bindings led to cascading updates, where changing one object led to another object
-    changing, which could also trigger more updates. As applications grew, these cascading updates
-    made it very difficult to predict what would change as the result of one user interaction. When
-    updates can only change data within a single round, the system as a whole becomes more
-    predictable." "Flux is more of a pattern than a framework"
+    "Flux is more of a pattern than a framework or toll like Redux"
   </p>
   <p class="fragment fade-in">
-    Facebook faces the problem while developing chat system, view1 manipulates model1 and model1
-    updates the view2 like their system has circular dependency thats why they came up with solution
-    flux.
+    A year after releasing React, Facebook announced the "Flux Architecture"
   </p>
+  <p class="fragment fade-in citation">
+    "We found that two-way data bindings led to cascading updates, where changing one object led to
+    another object changing, which could also trigger more updates. As applications grew, these
+    cascading updates made it very difficult to predict what would change as the result of one user
+    interaction. When updates can only change data within a single round, the system as a whole
+    becomes more predictable."
+  </p>
+</section>
+
+<section>
+  <h2>What Is Redux?</h2>
+  <section>
+    <p class="fragment fade-in">
+      Developer experience (DX)
+    </p>
+    <img src="assets/redux/dan_abramov.jpg" class="fragment fade-in clean-img full-width" />
+  </section>
 </section>
 
 <section>
@@ -108,12 +128,12 @@
     </h2>
     <p class="fragment fade-in">
       State updates are caused by dispatching an action, which is a plain object describing what
-      happened. The rest of the app is not allowed to modify the state tree directly.
+      happened. The rest of the app is not allowed to modify the state tree directly. No setters.
     </p>
   </section>
   <section>
     <h2 class="fade-in">
-      Changes are made with pure functions
+      Changes through pure functions
     </h2>
     <p class="fragment fade-in">
       All state updates are performed by pure functions called reducers, which are:
@@ -132,6 +152,13 @@
       error reports with full snapshots of app state, and more.
     </p>
   </section>
+</section>
+
+<section>
+  <h2>Quiz time</h2>
+  <p class="fragment fade-in">
+    Please visit: link
+  </p>
 </section>
 
 <section>
@@ -161,6 +188,18 @@
       Hot module reloading
     </p>
   </section>
+  <section>
+    <p class="fade-in">
+      Easiness in testing
+    </p>
+  </section>
+</section>
+
+<section>
+  <h2>Functional programming</h2>
+  <section>
+    <img src="assets/redux/passByValue-vs-passByReference.gif" class="clean-img full-width" />
+  </section>
 </section>
 
 <section>
@@ -174,45 +213,48 @@
 </section>
 
 <section>
-  <h2>Vanilla Redux</h2>
-  <p class="fragment fade-in"></p>
-</section>
-<section>
-  <h2>Goals</h2>
-  <p class="fragment fade-in">Define what redux is</p>
-  <p class="fragment fade-in">Describe actions and reducers in redux</p>
-  <p class="fragment fade-in">Describe methods on the redux store</p>
-</section>
-<section>
-  <h2>Redux</h2>
-</section>
-<section>
-  <h2>Action</h2>
-  <p class="fragment fade-in">
-    A plain JavaScript object that must have a key called type and a string value
-  </p>
-  <p class="fragment fade-in">{ type: "LOGOUT_USER" }</p>
-  <p class="fragment fade-in">The action can have any number of additional keys</p>
-</section>
-<section>
+  <section>
+    <h2>Vanilla Redux</h2>
+    <p class="fragment fade-in"></p>
+  </section>
+
+  <section>
+    <h2>Goals</h2>
+    <p class="fragment fade-in">Describe actions and reducers in redux</p>
+    <p class="fragment fade-in">Describe methods on the redux store</p>
+    <p class="fragment fade-in">Define basic flow</p>
+  </section>
+
+  <section>
+    <h2>Action</h2>
+    <p class="fragment fade-in">
+      A plain JavaScript object that must have a key called type and a string value
+    </p>
+    <img src="assets/redux/action.svg" class="fragment fade-in clean-img full-width" />
+
+    <section>
+      <p>The action can have any number of additional keys</p>
+      <img src="assets/redux/action2.svg" class="fragment fade-in clean-img full-width" />
+      <img src="assets/redux/action3.svg" class="fragment fade-in clean-img full-width" />
+    </section>
+  </section>
+  <section>
+    <section>
+      <h2>Reducer</h2>
+      <p class="fragment fade-in">
+        A function that accepts the state and an action and returns a new state (entire state
+        object)
+      </p>
+      <img src="assets/redux/action3.svg" class="fragment fade-in clean-img full-width" />
+    </section>
+  </section>
+
   <h2>Creating A Store</h2>
   <p class="fragment fade-in">
     A plain JavaScript object that must have a key called type and a string value
   </p>
-  <p class="fragment fade-in">{ type: "LOGOUT_USER" }</p>
-  <p class="fragment fade-in">The action can have any number of additional keys</p>
 </section>
-<section>
-  <h2>Reducer</h2>
-  <p class="fragment fade-in">
-    A function that accepts the state and an action and returns a new state (entire state object)
-  </p>
-  <p class="fragment fade-in">
-    function rootReducer(state={}, action) { switch(action.type) { case "LOGOUT_USER": return
-    {...state, login: false} case "LOGIN_USER": return {...state, login: true} default: return
-    state; } }
-  </p>
-</section>
+
 <section>
   <h2>Using Redux with React</h2>
   <p class="fragment fade-in">
@@ -220,23 +262,16 @@
   </p>
 
   <p class="fragment fade-in">
-    mapStateToProps: called every time the store state changes. It receives the entire store state,
-    and should return an object full of data. Each field in the returned object becomes a prop for
-    the wrapped component.
+    Function mapStateToProps: called every time the store state changes. It receives the entire
+    store state, and should return an object full of data. Each field in the returned object becomes
+    a prop for the wrapped component.
   </p>
   <p class="fragment fade-in">
-    mapDispatchToProps: called once on component creation. It receives the dispatch method, and
-    should return an object full of functions that use dispatch.
+    Function mapDispatchToProps: called once on component creation. It receives the dispatch method,
+    and should return an object full of functions that use dispatch.
   </p>
 </section>
 
-<section>
-  <img
-    src="assets/redux/carbon.svg"
-    style="min-height: 1000px; min-width: 1600px;"
-    class="clean-img full-width"
-  />
-</section>
 <section>
   <h2>Redux Middleware</h2>
   <p class="fragment fade-in">
@@ -251,29 +286,10 @@
 <section>
   <img src="assets/redux/with-and-without-redux.png" class="clean-img full-width" />
 </section>
-<section>
-  <div>
-    <pre><code class="hljs javascript" data-trim data-line-numbers="4,8-9">
-        import React, { useState } from 'react';
-        
-        function Example() {
-        const [count, setCount] = useState(0);
-        
-            return (
-                &lt;div&gt;
-                    &lt;p&gt;You clicked {count} times&lt;/p&gt;
-                    &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
-                    Click me
-                    &lt;/button&gt;
-                &lt;/div&gt;
-            );
-        }
-            </code></pre>
-  </div>
 
-  <p>
-    Code syntax highlighting courtesy of
-    <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.
+<section>
+  <h2>Quiz time</h2>
+  <p class="fragment fade-in">
+    Please visit: link
   </p>
 </section>
-<section></section>

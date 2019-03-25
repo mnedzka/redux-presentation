@@ -19,7 +19,8 @@ $white: #fee;
 $blue: #0c2577;
 
 @mixin bodyBackground() {
-  @include radial-gradient(#00c9ff, #92fe9d);
+  //   @include radial-gradient(#00c9ff, #92fe9d);
+  @include horizontal-gradient(#00c9ff, #92fe9d);
 }
 
 .reveal {
@@ -41,6 +42,12 @@ $blue: #0c2577;
     font-weight: bold;
     display: inline-block;
     border-bottom: 5px solid black;
+  }
+
+  .citation {
+    font-style: italic;
+    width: 50%;
+    margin: 0 auto;
   }
 
   .alt {
