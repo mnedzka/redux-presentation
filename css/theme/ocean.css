@@ -15,7 +15,16 @@
 .reveal h2 {
   font-weight: bold;
   display: inline-block;
-  border-bottom: 5px solid black; }
+  border-bottom: 5px solid black;
+  line-height: 1.1 !important; }
+
+.reveal h3 {
+  text-transform: none !important; }
+
+.reveal .diagram {
+  width: 65%;
+  display: block;
+  margin: 0 auto; }
 
 .reveal .citation {
   font-style: italic;

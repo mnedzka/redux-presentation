@@ -42,6 +42,17 @@ $blue: #0c2577;
     font-weight: bold;
     display: inline-block;
     border-bottom: 5px solid black;
+    line-height: 1.1 !important;
+  }
+
+  h3 {
+    text-transform: none !important;
+  }
+
+  .diagram {
+    width: 65%;
+    display: block;
+    margin: 0 auto;
   }
 
   .citation {
