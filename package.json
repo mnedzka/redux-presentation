@@ -1,17 +1,13 @@
 {
-  "name": "ocean-team-presentations",
+  "name": "redux-ksh",
   "version": "1.0.0",
-  "description": "ocean-team-presentations",
+  "description": "presentation-about-redux",
   "scripts": {
     "test": "grunt test",
     "start": "npm run build && grunt serve",
     "build": "npm run bundle:clean && npm run bundle:generate && grunt css",
     "bundle:clean": "rimraf ./public",
     "bundle:generate": "node generatePresentationsBundle.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://stash.stepstone.com/projects/APPLY/repos/ocean-team-presentations"
   },
   "engines": {
     "node": ">=4.0.0"
