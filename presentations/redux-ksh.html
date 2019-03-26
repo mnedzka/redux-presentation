@@ -27,16 +27,36 @@
   </section>
   <section>
     <h2>Revealing module pattern</h2>
-    <h3 class="fragment fade-in">
-      Developers didn’t seem to care much about the architecture itself.
-    </h3>
   </section>
-
   <section
     data-background="assets/redux/revealing-module-pattern.svg"
     class="fragment fade-in contain"
   ></section>
+  <section>
+    <h3>
+      Developers didn’t seem to care much about the architecture itself.
+    </h3>
+  </section>
 
+  <section data-background="assets/redux/spaghetti.jpg" class="fragment fade-in"></section>
+  <section data-background="assets/redux/baby-spaghetti.jpg" class="fragment fade-in"></section>
+  <section>
+    <img src="assets/redux/jquery-events-problems.png" class="fade-in clean-img full-width" />
+  </section>
+</section>
+
+<!-- 
+      
+    
+    ARCHITECTURE CHOICE ##################################################
+
+
+-->
+
+<section>
+  <section>
+    <h2>Architecture choice</h2>
+  </section>
   <section>
     <h2>MVC</h2>
     <h3 class="fragment fade-in">
@@ -48,7 +68,7 @@
   </section>
 
   <section>
-    <h3>Model: manages the behavior and data of the application domain</h3>
+    <h3>Model: manages the behavior and data of the application</h3>
     <h3 class="fragment fade-in">View: represents the display of the model in the UI</h3>
     <h3 class="fragment fade-in">
       Controller: takes user input, manipulates the model and causes the view to update
@@ -59,6 +79,14 @@
     <img src="assets/redux/mvc-diagram.png" class="fade-in clean-img full-width" />
   </section>
 </section>
+
+<!-- 
+      
+    
+    SPAS ##################################################
+
+
+-->
 
 <section>
   <section>
@@ -76,18 +104,17 @@
 
   <section>
     <h3>
-      SPA is a web application or web site that interacts with the user by dynamically rewriting the
-      current page rather than loading entire new pages from a server. This approach avoids
-      interruption of the user experience between successive pages, making the application behave
-      more like a desktop application.
+      SPA is a web application that behaves like desktop application.
+    </h3>
+    <h3 class="fragment fade-in">
+      It intercepts requests to the server and works on client side.
     </h3>
   </section>
 
-  <!-- <section>
-    <video autoplay="true" loop="true" muted="true" width="960">
-      <source data-src="https://media.giphy.com/media/Dh8Vh8jEvfePS/giphy.mp4" type="video/mp4" />
-    </video>
-  </section> -->
+  <section>
+        <h2 class="fade-in">WHY SPA?</h2>
+      </section>
+
   <section>
     <h3>Latency</h3>
     <video autoplay="true" loop="true" muted="true" width="960">
@@ -95,12 +122,9 @@
     </video>
   </section>
 
-  <!-- <section
-    data-background-video="https://media.giphy.com/media/Dh8Vh8jEvfePS/giphy.mp4"
-    data-background-video-loop
-    data-background-video-muted
-  >
-  </section> -->
+  <section>
+    <h3 class="fade-in">About 50% users leave site after 3sec</h3>
+  </section>
 
   <section>
     <h2>PROS & CONS</h2>
@@ -117,13 +141,26 @@
     <h3 class="fragment fade-in">SEO</h3>
     <h3 class="fragment fade-in">Speed of initial load</h3>
     <h3 class="fragment fade-in">Accessibility</h3>
-    <h3 class="fragment fade-in">Browser history</h3>
     <h3 class="fragment fade-in">Memory leaks</h3>
     <h3 class="fragment fade-in">Analytics</h3>
   </section>
 </section>
 
+<!-- 
+      
+    
+    PROBLEM ##################################################
+
+
+-->
+
 <section>
+  <section>
+    <video autoplay="true" loop="true" muted="true" width="960">
+      <source data-src="assets/redux/problem.mp4" type="video/mp4" />
+    </video>
+  </section>
+
   <section>
     <h2>What's the problem?</h2>
 
@@ -141,21 +178,26 @@
   <section>
     <h2>Client side MVC</h2>
   </section>
+  <section>
+    <h3 class="fade-in">
+      MVC plays well in small client applications but has problems when app grows. because of two
+      way data binding which cause hard to track changes in application state.
+    </h3>
+    <h3 class="fragment fade-in">Why?</h3>
+    <h3 class="fragment fade-in">
+      Two way data binding which cause hard to track changes in application state.
+    </h3>
+  </section>
   <section
     data-background="assets/redux/view-controller-client.png"
     class="fragment fade-in"
   ></section>
-  <section>
-    <h3>
-      Play well in small client applications but has problems when app grows because of two way data
-      binding which cause hard to track changes in application state.
-    </h3>
-  </section>
 
   <section>
     <h3>
-      Two way data binding can have many to many dependency between models and views.
+      Many to many dependency between models/controllers and views wit two way data binding.
     </h3>
+
     <h3 class="fragment fade-in">
       A model can update a view which can update a model which can update another model and there
       can be a infinite loop of cascading updates.
@@ -164,25 +206,32 @@
 
   <section>
     <h3>
-      Facebook faces the problem while developing chat system, view1 manipulates model1 and model1
-      updates the view2 like their system has circular dependency.
+      Facebook faces this problem while developing chat system.
     </h3>
   </section>
 
   <section>
-    <p class="citation">
-      In a talk Jing Chen ( Creator of Flux ) said - "There is just an explosion of command flows,
-      and it is hard to tell if there is any infinite loop that might be causing a cascading
-      effect."
-    </p>
+    <img src="assets/redux/mvc-problem.jpg"" class=" clean-img full-width" />
   </section>
 
-  <section data-background="assets/redux/mvc-problem.jpg" class="fragment fade-in"></section>
+  <section>
+    <h3>
+      Multiple dependent requests
+    </h3>
+  </section>
 
-  <!-- <section>
-    <img src="assets/redux/mvc-problem.jpg" class="clean-img full-width" />
-  </section> -->
+  <section>
+    <img src="assets/redux/requests.png"" class=" clean-img full-width" />
+  </section>
 </section>
+
+<!-- 
+      
+    
+    SOLUTION ##################################################
+
+
+-->
 
 <section>
   <section>
@@ -200,8 +249,10 @@
     <h2>Unidirectional data flow</h2>
     <h3 class="fragment fade-in">
       In unidirectional data flow action updates stores which updates views. So if there is a error
-      it would be easy to track which action caused it. Unidirectional data flow is more
-      predictable.
+      it would be easy to track which action caused it.
+    </h3>
+    <h3 class="fragment fade-in">
+      Unidirectional data flow is more predictable.
     </h3>
   </section>
 
@@ -209,136 +260,188 @@
     <h3>
       "Flux is more of a pattern than a framework or toll like Redux"
     </h3>
-    <h3 class="fragment fade-in citation">
-      "We found that two-way data bindings led to cascading updates, where changing one object led
-      to another object changing, which could also trigger more updates. As applications grew, these
-      cascading updates made it very difficult to predict what would change as the result of one
-      user interaction. When updates can only change data within a single round, the system as a
-      whole becomes more predictable."
-    </h3>
+  </section>
+
+  <section>
+    <img src="assets/redux/flux.png" class="clean-img full-width" />
+  </section>
+
+  <section>
+    <img src="assets/redux/flux-many-stores.jpeg" class="clean-img full-width" />
   </section>
 </section>
 
 <section>
-  <h2>How to improve Flux?</h2>
+  <h2>Evolution of Flux</h2>
   <section>
     <h3 class="fragment fade-in">
       Dan Abramov
     </h3>
     <img src="assets/redux/dan_abramov.jpg" class="fragment fade-in clean-img full-width" />
   </section>
-</section>
 
-<section>
   <section>
-    <h2>What Is Redux?</h2>
+    <h2>HMR to persist state</h2>
   </section>
+
   <section>
-    <h3 class="fade-in">A popular state management library</h3>
-    <h3 class="fragment fade-in">Created by Dan Abramov and Andrew Clark</h3>
-    <h3 class="fragment fade-in">Inspired by Facebook Flux and Elm</h3>
-    <h3 class="fragment fade-in">Models the application state as a single JavaScript Object</h3>
-    <h3 class="fragment fade-in">Often used with React but it does not depend on React</h3>
-  </section>
-  <section>
-    <h2 class="fade-in">
-      Redux is Predictable
-    </h2>
-    <h3 class="fragment fade-in">
-      Redux attempts to make state mutations predictable by imposing certain restrictions on how and
-      when updates can happen.
-    </h3>
-    <h3 class="fragment fade-in">
-      These restrictions are reflected in the three principles of Redux:
-    </h3>
-  </section>
-  <section>
-    <h2 class="fade-in">
-      Single source of truth
-    </h2>
-    <h3 class="fragment fade-in">
-      The state of your whole application is stored as a tree of plain objects and arrays within a
-      single store. (How much you put in the store is up to you - not all data needs to live there.)
-    </h3>
-    <h3 class="fragment fade-in">
-      This one-store approach of Redux is one of the primary differences between it and Flux's
-      multiple store approach.
-    </h3>
-  </section>
-  <section>
-    <h2 class="fade-in">
-      State is read-only
-    </h2>
-    <h3 class="fragment fade-in">
-      State updates are caused by dispatching an action, which is a plain object describing what
-      happened. The rest of the app is not allowed to modify the state tree directly. No setters.
-    </h3>
-  </section>
-  <section>
-    <h2 class="fade-in">
-      Changes through pure functions
-    </h2>
-    <h3 class="fragment fade-in">
-      All state updates are performed by pure functions called reducers, which are:
-    </h3>
-    <h3 class="fragment fade-in">
-      (state, action) => newState
-    </h3>
-  </section>
-  <section>
-    <h2>Redux is Centralized</h2>
-    <h3 class="fragment fade-in">
-      Having a single store and single state tree enables many powerful techniques:
-    </h3>
-    <h3 class="fragment fade-in">
-      logging of all updates, API handling, undo/redo, state persistence, "time-travel debugging",
-      error reports with full snapshots of app state, and more.
-    </h3>
+    <img src="assets/redux/flux-vs-redux.png" class="clean-img full-width" />
   </section>
 </section>
 
+<!-- 
+      
+    
+    WHAT IS REDUX ##################################################
+
+
+-->
+
 <section>
-  <section>
-    <h2>Vanilla Redux</h2>
-    <h3 class="fragment fade-in"></h3>
-  </section>
+  <h2>What Is Redux?</h2>
+</section>
+<section>
+  <h3 class="fade-in">A popular state management library</h3>
+  <h3 class="fragment fade-in">Created by Dan Abramov and Andrew Clark</h3>
+  <h3 class="fragment fade-in">Inspired by Facebook Flux and Elm</h3>
+  <h3 class="fragment fade-in">Models the application state as a single JavaScript Object</h3>
+  <h3 class="fragment fade-in">Often used with React but it does not depend on React</h3>
+</section>
+<section>
+  <h2 class="fade-in">
+    Why Redux?
+  </h2>
+  <h3 class="fragment fade-in">
+    Redux is Predictable
+  </h3>
+  <h3 class="fragment fade-in">
+    Redux attempts to make state mutations predictable by imposing certain restrictions on how and
+    when updates can happen.
+  </h3>
+</section>
+<section>
+  <h2 class="fade-in">
+    Three rules of Redux:
+  </h2>
+</section>
+<section>
+  <h2 class="fade-in">
+    Single source of truth
+  </h2>
+  <h3 class="fragment fade-in">
+    The state of your whole application is stored as a tree of plain objects and arrays within a
+    single store.
+  </h3>
+  <h3 class="fragment fade-in">
+    How much you put in the store is up to you - not all data needs to live there.
+  </h3>
+</section>
+<section>
+  <h2 class="fade-in">
+    State is read-only
+  </h2>
+  <h3 class="fragment fade-in">
+    State updates are caused by dispatching an action, which is a plain object describing what
+    happened.
+  </h3>
+  <h3 class="fragment fade-in">
+    The rest of the app is not allowed to modify the state tree directly.
+  </h3>
+  <h3 class="fragment fade-in">
+    No setters.
+  </h3>
+</section>
+<section>
+  <h2 class="fade-in">
+    Changes through pure functions
+  </h2>
+  <h3 class="fragment fade-in">
+    All state updates are performed by pure functions called reducers, which are:
+  </h3>
+  <h3 class="fragment fade-in">
+    (state, action) => newState
+  </h3>
+</section>
 
-  <section>
-    <h2>Goals</h2>
-    <h3 class="fragment fade-in">Describe actions and reducers in redux</h3>
-    <h3 class="fragment fade-in">Describe methods on the redux store</h3>
-    <h3 class="fragment fade-in">Define basic flow</h3>
-  </section>
 
-  <section>
-    <h2>Action</h2>
-    <h3 class="fragment fade-in">
-      A plain JavaScript object that must have a key called type and a string value
-    </h3>
-    <img src="assets/redux/action.svg" class="fragment fade-in clean-img full-width" />
+<section>
+    <h3>    State as a </h3>
+</section>
 
-    <section>
-      <h3>The action can have any number of additional keys</h3>
-      <img src="assets/redux/action2.svg" class="fragment fade-in clean-img full-width" />
-      <img src="assets/redux/action3.svg" class="fragment fade-in clean-img full-width" />
-    </section>
-  </section>
-  <section>
-    <section>
-      <h2>Reducer</h2>
-      <h3 class="fragment fade-in">
-        A function that accepts the state and an action and returns a new state (entire state
-        object)
-      </h3>
-      <img src="assets/redux/action3.svg" class="fragment fade-in clean-img full-width" />
-    </section>
-  </section>
+<section>
+  <h2>Redux is Centralized</h2>
+  <h3 class="fragment fade-in">
+    Having a single store and single state tree enables many powerful techniques:
+  </h3>
+  <h3 class="fragment fade-in">
+    Logging of all updates, API handling, undo/redo, state persistence, "time-travel debugging",
+    error reports with full snapshots of app state.
+  </h3>
+</section>
 
+<!-- 
+      
+    
+    VANILLA REDUX ##################################################
+
+
+-->
+
+<section>
+  <h2>Vanilla Redux</h2>
+  <h3 class="fragment fade-in"></h3>
+</section>
+
+<section>
+  <h2>Goals</h2>
+  <h3 class="fragment fade-in">Describe actions, reducers and store</h3>
+  <h3 class="fragment fade-in">Describe methods on the redux store</h3>
+  <h3 class="fragment fade-in">Define basic flow</h3>
+</section>
+
+<section>
   <h2>Creating A Store</h2>
+  <h3 class="fragment fade-in"></h3>
+</section>
+
+<section>
+  <h2>Action</h2>
   <h3 class="fragment fade-in">
     A plain JavaScript object that must have a key called type and a string value
   </h3>
 </section>
+
+<section>
+  <img src="assets/redux/action.svg" class="clean-img full-width" />
+</section>
+<!-- <section data-background="assets/redux/action.svg" class="fragment fade-in"></section> -->
+
+<section>
+  <h3>The action can have any number of additional keys</h3>
+</section>
+<section>
+  <img src="assets/redux/action2.svg" class="clean-img full-width" />
+</section>
+<section>
+  <img src="assets/redux/action3.svg" class="clean-img full-width" />
+</section>
+
+<section>
+  <h2>Reducer</h2>
+  <h3 class="fragment fade-in">
+    A function that accepts the state and an action and returns a new state (entire state object)
+  </h3>
+  <!-- <img src="assets/redux/action3.svg" class="fragment fade-in clean-img full-width" /> -->
+</section>
+<section>
+  <img src="assets/redux/reducer.svg" class="reducer clean-img full-width" />
+</section>
+
+<section>
+  <img src="assets/redux/redux-flow.svg" class="clean-img full-width" />
+</section>
+
+<!-- <section data-background="assets/redux/reducer.svg" class="fragment fade-in"></section> -->
 
 <section>
   <h2>Quiz time</h2>
@@ -347,9 +450,25 @@
   </h3>
 </section>
 
+<!-- 
+      
+    
+    DO WE NEED REDUX IN REACT ##################################################
+
+
+-->
+
 <section>
   <section>
     <h2>Do we even need Redux in React?</h2>
+  </section>
+
+  <section>
+    <img src="assets/redux/with-and-without-redux.png" class="clean-img full-width" />
+  </section>
+
+  <section>
+    <h2>Props drilling?</h2>
   </section>
 
   <section>
@@ -389,31 +508,49 @@
 </section>
 
 <section>
-  <img src="assets/redux/dan_abramov.jpg" class="clean-img full-width" />
-</section>
-<section>
-  <img src="assets/redux/ReactDataFlow.gif" class="clean-img full-width" />
-</section>
-<section>
   <img src="assets/redux/doing-what-dan-said.jpg" class="clean-img full-width" />
 </section>
 
-<section>
-  <h2>Using Redux with React</h2>
-  <h3 class="fragment fade-in">
-    connect:
-  </h3>
+<!-- 
+      
+    
+    REDUX WITH REACT ##################################################
 
-  <h3 class="fragment fade-in">
-    Function mapStateToProps: called every time the store state changes. It receives the entire
-    store state, and should return an object full of data. Each field in the returned object becomes
-    a prop for the wrapped component.
-  </h3>
-  <h3 class="fragment fade-in">
-    Function mapDispatchToProps: called once on component creation. It receives the dispatch method,
-    and should return an object full of functions that use dispatch.
-  </h3>
+
+-->
+
+<section>
+  <section>
+    <h2>Using Redux with React</h2>
+    <h3 class="fragment fade-in">
+      connect:
+    </h3>
+  </section>
+
+  <section>
+    <h2>Passing state to component</h2>
+    <h3 class="fragment fade-in">
+      Function mapStateToProps: called every time the store state changes. It receives the entire
+      store state, and should return an object full of data. Each field in the returned object
+      becomes a prop for the wrapped component.
+    </h3>
+  </section>
+  <section>
+    <h2>Passing dispatch to component</h2>
+    <h3 class="fragment fade-in">
+      Function mapDispatchToProps: called once on component creation. It receives the dispatch
+      method, and should return an object full of functions that use dispatch.
+    </h3>
+  </section>
 </section>
+
+<!-- 
+      
+    
+   MIDDLEWARE ##################################################
+
+
+-->
 
 <section>
   <h2>Redux Middleware</h2>
@@ -430,13 +567,39 @@
   <img src="assets/redux/with-and-without-redux.png" class="clean-img full-width" />
 </section>
 
+<!-- 
+      
+    
+    REAL EXAMPLE ##################################################
+
+
+-->
+
 <section>
   <h2>Real example</h2>
 </section>
+
+<!-- 
+      
+    
+    REDUX WITH REACT ##################################################
+
+
+-->
 
 <section>
   <h2>Quiz time</h2>
   <h3 class="fragment fade-in">
     Please visit: link
   </h3>
+</section>
+
+<section>
+  <img src="assets/redux/mvc-problem.jpg"" class=" clean-img full-width" />
+</section>
+
+<section>
+  <video autoplay="true" loop="true" muted="true" width="960">
+    <source data-src="thats's-all-folks.gif" />
+  </video>
 </section>

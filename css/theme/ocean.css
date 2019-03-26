@@ -34,6 +34,9 @@
   width: 75%;
   margin: 0 auto; }
 
+.reveal .reducer {
+  max-width: 120% !important; }
+
 .reveal .alt {
   color: #fee; }
   .reveal .alt h1,
