@@ -49,6 +49,10 @@ $blue: #0c2577;
     text-transform: none !important;
   }
 
+  .contain {
+    width: 88% !important;
+  }
+
   .diagram {
     width: 65%;
     display: block;
@@ -57,7 +61,7 @@ $blue: #0c2577;
 
   .citation {
     font-style: italic;
-    width: 50%;
+    width: 75%;
     margin: 0 auto;
   }
 

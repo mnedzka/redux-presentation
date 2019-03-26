@@ -21,6 +21,9 @@
 .reveal h3 {
   text-transform: none !important; }
 
+.reveal .contain {
+  width: 88% !important; }
+
 .reveal .diagram {
   width: 65%;
   display: block;
@@ -28,7 +31,7 @@
 
 .reveal .citation {
   font-style: italic;
-  width: 50%;
+  width: 75%;
   margin: 0 auto; }
 
 .reveal .alt {
