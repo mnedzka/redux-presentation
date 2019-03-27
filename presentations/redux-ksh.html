@@ -278,10 +278,9 @@
     </h3>
     <img src="assets/redux/dan_abramov.jpg" class="fragment fade-in clean-img full-width" />
   </section>
-
-  <section>
-    <h2>HMR to persist state</h2>
-  </section>
+</section>
+<section>
+  <h2>HMR to persist state</h2>
 </section>
 <section
   data-background-image="https://blog.isquaredsoftware.com/presentations/2018-03-redux-fundamentals/static/media/hmr.640665d9.gif"
@@ -303,8 +302,6 @@
 
 <section>
   <h2>What Is Redux?</h2>
-</section>
-<section>
   <img src="assets/redux/redux-logo.png" class="clean-img full-width" />
 </section>
 <section>
@@ -362,7 +359,7 @@
     All state updates are performed by pure functions called reducers, which are:
   </h3>
   <h3 class="fragment fade-in">
-    (state, action) => newState
+    (oldState, action) => newState
   </h3>
 </section>
 
@@ -447,7 +444,8 @@
 <section>
   <h2>Reducer</h2>
   <h3 class="fragment fade-in">
-    A function that accepts the state and an action and returns a new state (entire state object)
+    A function that accepts the old state and an action and returns a new state (entire state
+    object)
   </h3>
   <h3 class="fragment fade-in">
     Never return undefined from a reducer
@@ -461,6 +459,9 @@
   <section>
     <img src="assets/redux/passByValue-vs-passByReference.gif" class="clean-img full-width" />
   </section>
+</section>
+<section>
+  <h2>https://doesitmutate.xyz/</h2>
 </section>
 <section>
   <img src="assets/redux/reducer.svg" class="reducer clean-img full-width" />
@@ -515,6 +516,9 @@
     <h2>Props drilling</h2>
   </section>
   <section>
+    <h3 class="fade-in">
+      We don't need to lift state up anymore
+    </h3>
     <img src="assets/redux/with-and-without-redux.png" class="clean-img full-width" />
   </section>
 
@@ -532,11 +536,6 @@
   </section>
   <section>
     <h3 class="fade-in">
-      We don't need to lift state up anymore
-    </h3>
-  </section>
-  <section>
-    <h3 class="fade-in">
       Hot module reloading
     </h3>
   </section>
@@ -545,10 +544,6 @@
       Easiness in testing
     </h3>
   </section>
-</section>
-
-<section>
-  <img src="assets/redux/doing-what-dan-said.jpg" class="clean-img full-width" />
 </section>
 
 <!-- 
@@ -571,7 +566,7 @@
   </section>
 
   <section>
-    <h2>Passing state to component</h2>
+    <h2 class="no-underline fade-in">Passing state to component</h2>
     <h3 class="fragment fade-in">
       Function mapStateToProps called every time the store state changes. It receives the entire
       store state, and should return an object full of data. Each field in the returned object
@@ -585,7 +580,7 @@
     </h3>
   </section>
   <section>
-    <h2>Passing dispatch to component</h2>
+    <h2 class="no-underline fade-in">Passing dispatch to component</h2>
     <h3 class="fragment fade-in">
       Function mapDispatchToProps: called once on component creation.
     </h3>
@@ -605,16 +600,54 @@
 -->
 
 <section>
+  <h2 class="fade-in">Redux Thunk</h2>
+</section>
+
+<section>
   <h2>Redux Middleware</h2>
   <h3 class="fragment fade-in">
     A Redux store can be configured to use middleware. Middleware provides the capability to run
     code after an action is dispatched, but before it reaches the reducer
   </h3>
+</section>
+
+<section>
+  <h2>Use cases</h2>
+  <h3 class=" fade-in">
+    talking to async API
+  </h3>
   <h3 class="fragment fade-in">
+    logging
+  </h3>
+  <h3 class=" fragment fade-in">
+    crash reporting
+  </h3>
+  <h3 class="fragment fade-in">
+    routing
+  </h3>
+</section>
+
+<section>
+  <img src="assets/redux/middleware.png" class="clean-img full-width" />
+</section>
+
+<section>
+  <h3 class="fade-in">
     Middlewares form a pipeline that wraps around the dispatch function. Each middleware in the
     chain can pass actions onward, restart the dispatch pipeline, and access the store state
   </h3>
 </section>
+
+<section>
+  <img src="assets/redux/middleware2.png" class="clean-img full-width" />
+</section>
+
+<section
+  data-background-image="https://blog.isquaredsoftware.com/presentations/2018-03-redux-fundamentals/static/media/redux-middlewares-animated.384965fd.gif"
+  data-background-size="900px"
+  data-background-repeat="no-repeat"
+></section>
+
 <!-- <section>
   <img src="assets/redux/with-and-without-redux.png" class="clean-img full-width" />
 </section> -->
@@ -648,6 +681,7 @@
 
 <section>
   <h2>You might not need Redux</h2>
+  <img src="assets/redux/you-might.png" class="clean-img full-width" />
 </section>
 
 <section>
