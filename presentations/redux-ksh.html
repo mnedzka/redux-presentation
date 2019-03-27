@@ -26,7 +26,7 @@
     <img src="assets/redux/jquery.png" class="fragment fade-in clean-img full-width" />
   </section>
   <section>
-    <h2>Revealing module pattern</h2>
+    <h2 class="no-underline">Revealing module pattern</h2>
   </section>
   <section
     data-background="assets/redux/revealing-module-pattern.svg"
@@ -34,7 +34,7 @@
   ></section>
   <section>
     <h3>
-      Developers didn’t seem to care much about the architecture itself.
+      Developers didn’t seem to care much about the architecture itself
     </h3>
   </section>
 
@@ -60,10 +60,10 @@
   <section>
     <h2>MVC</h2>
     <h3 class="fragment fade-in">
-      Invented in 1976. Used in backend in Java, PHP, ASP.NET, C#, ROR, Django.
+      Invented in 1976. Used in backend in Java, PHP, ASP.NET, C#, ROR, Django
     </h3>
     <h3 class="fragment fade-in">
-      On frontend side in Backbone, AngularJS and Ember.
+      On frontend side in Backbone, AngularJS and Ember
     </h3>
   </section>
 
@@ -104,16 +104,16 @@
 
   <section>
     <h3>
-      SPA is a web application that behaves like desktop application.
+      SPA is a web application that behaves like desktop application
     </h3>
     <h3 class="fragment fade-in">
-      It intercepts requests to the server and works on client side.
+      It intercepts requests to the server and works on client side
     </h3>
   </section>
 
   <section>
-        <h2 class="fade-in">WHY SPA?</h2>
-      </section>
+    <h2 class="fade-in">WHY SPA?</h2>
+  </section>
 
   <section>
     <h3>Latency</h3>
@@ -180,12 +180,11 @@
   </section>
   <section>
     <h3 class="fade-in">
-      MVC plays well in small client applications but has problems when app grows. because of two
-      way data binding which cause hard to track changes in application state.
+      MVC plays well in small client applications but has problems when app grows
     </h3>
     <h3 class="fragment fade-in">Why?</h3>
     <h3 class="fragment fade-in">
-      Two way data binding which cause hard to track changes in application state.
+      Two way data binding which cause hard to track changes in application state
     </h3>
   </section>
   <section
@@ -195,18 +194,18 @@
 
   <section>
     <h3>
-      Many to many dependency between models/controllers and views wit two way data binding.
+      Many to many dependency between models/controllers and views with two way data binding.
     </h3>
 
     <h3 class="fragment fade-in">
       A model can update a view which can update a model which can update another model and there
-      can be a infinite loop of cascading updates.
+      can be a infinite loop of cascading updates
     </h3>
   </section>
 
   <section>
     <h3>
-      Facebook faces this problem while developing chat system.
+      Facebook faces this problem while developing chat system
     </h3>
   </section>
 
@@ -248,11 +247,11 @@
   <section>
     <h2>Unidirectional data flow</h2>
     <h3 class="fragment fade-in">
-      In unidirectional data flow action updates stores which updates views. So if there is a error
-      it would be easy to track which action caused it.
+      In unidirectional data flow action updates stores which updates views. So if there is an error
+      it would be easy to track which action caused it
     </h3>
     <h3 class="fragment fade-in">
-      Unidirectional data flow is more predictable.
+      Unidirectional data flow is more predictable
     </h3>
   </section>
 
@@ -283,10 +282,15 @@
   <section>
     <h2>HMR to persist state</h2>
   </section>
+</section>
+<section
+  data-background-image="https://blog.isquaredsoftware.com/presentations/2018-03-redux-fundamentals/static/media/hmr.640665d9.gif"
+  data-background-size="900px"
+  data-background-repeat="no-repeat"
+></section>
 
-  <section>
-    <img src="assets/redux/flux-vs-redux.png" class="clean-img full-width" />
-  </section>
+<section>
+  <img src="assets/redux/flux-vs-redux.png" class="clean-img full-width" />
 </section>
 
 <!-- 
@@ -301,10 +305,12 @@
   <h2>What Is Redux?</h2>
 </section>
 <section>
-  <h3 class="fade-in">A popular state management library</h3>
+  <img src="assets/redux/redux-logo.png" class="clean-img full-width" />
+</section>
+<section>
+  <h3 class="fade-in">Centralized global store for state</h3>
   <h3 class="fragment fade-in">Created by Dan Abramov and Andrew Clark</h3>
   <h3 class="fragment fade-in">Inspired by Facebook Flux and Elm</h3>
-  <h3 class="fragment fade-in">Models the application state as a single JavaScript Object</h3>
   <h3 class="fragment fade-in">Often used with React but it does not depend on React</h3>
 </section>
 <section>
@@ -316,12 +322,12 @@
   </h3>
   <h3 class="fragment fade-in">
     Redux attempts to make state mutations predictable by imposing certain restrictions on how and
-    when updates can happen.
+    when updates can happen
   </h3>
 </section>
 <section>
-  <h2 class="fade-in">
-    Three rules of Redux:
+  <h2 class="fade-in no-underline">
+    Three principles of Redux
   </h2>
 </section>
 <section>
@@ -330,10 +336,10 @@
   </h2>
   <h3 class="fragment fade-in">
     The state of your whole application is stored as a tree of plain objects and arrays within a
-    single store.
+    single store
   </h3>
   <h3 class="fragment fade-in">
-    How much you put in the store is up to you - not all data needs to live there.
+    How much you put in the store is up to you - not all data needs to live there
   </h3>
 </section>
 <section>
@@ -342,17 +348,14 @@
   </h2>
   <h3 class="fragment fade-in">
     State updates are caused by dispatching an action, which is a plain object describing what
-    happened.
+    happened
   </h3>
   <h3 class="fragment fade-in">
-    The rest of the app is not allowed to modify the state tree directly.
-  </h3>
-  <h3 class="fragment fade-in">
-    No setters.
+    The rest of the app is not allowed to modify the state tree directly
   </h3>
 </section>
 <section>
-  <h2 class="fade-in">
+  <h2 class="fade-in no-underline">
     Changes through pure functions
   </h2>
   <h3 class="fragment fade-in">
@@ -363,19 +366,19 @@
   </h3>
 </section>
 
-
 <section>
-    <h3>    State as a </h3>
+  <h3>Pure functions don't modify arguments</h3>
+  <h3 class="fragment fade-in">Are deterministic</h3>
 </section>
 
 <section>
   <h2>Redux is Centralized</h2>
   <h3 class="fragment fade-in">
-    Having a single store and single state tree enables many powerful techniques:
+    Having a single global store and single state tree enables many powerful techniques:
   </h3>
   <h3 class="fragment fade-in">
     Logging of all updates, API handling, undo/redo, state persistence, "time-travel debugging",
-    error reports with full snapshots of app state.
+    error reports with full snapshots of app state
   </h3>
 </section>
 
@@ -401,7 +404,22 @@
 
 <section>
   <h2>Creating A Store</h2>
-  <h3 class="fragment fade-in"></h3>
+  <h3 class="fragment fade-in">Place for whole state</h3>
+</section>
+
+<section>
+  <img src="assets/redux/store.svg" class="clean-img full-width" />
+</section>
+<section>
+  <h3 class="fade-in">dispatch: starts a state update with the provided action object</h3>
+</section>
+<section>
+  <h3 class="fade-in">getState: returns the current stored state value</h3>
+</section>
+<section>
+  <h3 class="fade-in">
+    subscribe: accepts a callback function that will be run every time an action is dispatched
+  </h3>
 </section>
 
 <section>
@@ -431,22 +449,52 @@
   <h3 class="fragment fade-in">
     A function that accepts the state and an action and returns a new state (entire state object)
   </h3>
-  <!-- <img src="assets/redux/action3.svg" class="fragment fade-in clean-img full-width" /> -->
+  <h3 class="fragment fade-in">
+    Never return undefined from a reducer
+  </h3>
+  <h3 class="fragment fade-in">
+    Must be “pure” – it cannot modify its arguments, and it can’t have side effects
+  </h3>
+</section>
+<section>
+  <h2>Passing by reference</h2>
+  <section>
+    <img src="assets/redux/passByValue-vs-passByReference.gif" class="clean-img full-width" />
+  </section>
 </section>
 <section>
   <img src="assets/redux/reducer.svg" class="reducer clean-img full-width" />
 </section>
 
 <section>
-  <img src="assets/redux/redux-flow.svg" class="clean-img full-width" />
+  <h2>Action Creator</h2>
+  <h3 class="fragment fade-in">
+    Function returning object
+  </h3>
+  <section>
+    <img src="assets/redux/action-creator.svg" class="clean-img full-width" />
+  </section>
+  <section>
+    <img src="assets/redux/action-creator1.svg" class="clean-img full-width" />
+  </section>
 </section>
+
+<section>
+  <img src="assets/redux/redux-flow.png" class="clean-img full-width" />
+</section>
+
+<section
+  data-background-image="https://blog.isquaredsoftware.com/presentations/2018-03-redux-fundamentals/static/media/redux-dataflow-animated.5c4571a2.gif"
+  data-background-size="900px"
+  data-background-repeat="no-repeat"
+></section>
 
 <!-- <section data-background="assets/redux/reducer.svg" class="fragment fade-in"></section> -->
 
 <section>
   <h2>Quiz time</h2>
   <h3 class="fragment fade-in">
-    Please visit: link
+    Please visit: kahoot.it
   </h3>
 </section>
 
@@ -460,15 +508,14 @@
 
 <section>
   <section>
-    <h2>Do we even need Redux in React?</h2>
+    <h2 class="no-underline">Do we even need Redux in React?</h2>
   </section>
 
+  <section>
+    <h2>Props drilling</h2>
+  </section>
   <section>
     <img src="assets/redux/with-and-without-redux.png" class="clean-img full-width" />
-  </section>
-
-  <section>
-    <h2>Props drilling?</h2>
   </section>
 
   <section>
@@ -480,12 +527,12 @@
     <h3 class="fade-in">
       "Time-travel debugging" allows developers to step back and forth in the history of dispatched
       actions, see the state and UI at each point in time, and even alter the history by canceling
-      actions.
+      action
     </h3>
   </section>
   <section>
     <h3 class="fade-in">
-      Lifting state up
+      We don't need to lift state up anymore
     </h3>
   </section>
   <section>
@@ -497,13 +544,6 @@
     <h3 class="fade-in">
       Easiness in testing
     </h3>
-  </section>
-</section>
-
-<section>
-  <h2>Functional programming</h2>
-  <section>
-    <img src="assets/redux/passByValue-vs-passByReference.gif" class="clean-img full-width" />
   </section>
 </section>
 
@@ -523,23 +563,35 @@
   <section>
     <h2>Using Redux with React</h2>
     <h3 class="fragment fade-in">
-      connect:
+      HOC connect
+    </h3>
+    <h3 class="fragment fade-in">
+      The connect() function connects a React component to a Redux store.
     </h3>
   </section>
 
   <section>
     <h2>Passing state to component</h2>
     <h3 class="fragment fade-in">
-      Function mapStateToProps: called every time the store state changes. It receives the entire
+      Function mapStateToProps called every time the store state changes. It receives the entire
       store state, and should return an object full of data. Each field in the returned object
-      becomes a prop for the wrapped component.
+      becomes a prop for the wrapped component
+    </h3>
+    <h3 class="fragment fade-in">
+      It receives the entire store state, and should return an object full of data
+    </h3>
+    <h3 class="fragment fade-in">
+      Each field in the returned object becomes a prop for the wrapped component
     </h3>
   </section>
   <section>
     <h2>Passing dispatch to component</h2>
     <h3 class="fragment fade-in">
-      Function mapDispatchToProps: called once on component creation. It receives the dispatch
-      method, and should return an object full of functions that use dispatch.
+      Function mapDispatchToProps: called once on component creation.
+    </h3>
+    <h3 class="fragment fade-in">
+      It receives the dispatch method, and should return an object full of functions that use
+      dispatch
     </h3>
   </section>
 </section>
@@ -560,12 +612,12 @@
   </h3>
   <h3 class="fragment fade-in">
     Middlewares form a pipeline that wraps around the dispatch function. Each middleware in the
-    chain can pass actions onward, restart the dispatch pipeline, and access the store state.
+    chain can pass actions onward, restart the dispatch pipeline, and access the store state
   </h3>
 </section>
-<section>
+<!-- <section>
   <img src="assets/redux/with-and-without-redux.png" class="clean-img full-width" />
-</section>
+</section> -->
 
 <!-- 
       
@@ -595,11 +647,15 @@
 </section>
 
 <section>
-  <img src="assets/redux/mvc-problem.jpg"" class=" clean-img full-width" />
+  <h2>You might not need Redux</h2>
 </section>
 
 <section>
-  <video autoplay="true" loop="true" muted="true" width="960">
-    <source data-src="thats's-all-folks.gif" />
-  </video>
+  <img src="assets/redux/IKnowRedux.jpg" class="clean-img full-width" />
 </section>
+
+<section
+  data-background-image="https://thumbs.gfycat.com/WholeDimpledBorzoi-small.gif"
+  data-background-size="900px"
+  data-background-repeat="no-repeat"
+></section>
